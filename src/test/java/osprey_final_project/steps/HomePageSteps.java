@@ -98,10 +98,6 @@ public class HomePageSteps extends SeleniumUtility {
         sendTextToElement(FormPage.Last_Name_Input, lastName);
         sendTextToElement(FormPage.Marital_Status, maritalStatus);
         sendTextToElement(FormPage.Date_of_Birth, dateOfBirth);
-
-
-
-
     }
 
 

@@ -6,12 +6,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 import osprey_final_project.pages.AccountPage;
 import osprey_final_project.pages.LoginPage;
 import osprey_final_project.pages.PlanPage;
 import osprey_final_project.utilities.DataGeneratorUtility;
 import osprey_final_project.utilities.SeleniumUtility;
 
+import java.util.List;
 import java.util.Map;
 
 public class PlanAndAccountPageSteps extends SeleniumUtility {
@@ -33,9 +35,12 @@ public class PlanAndAccountPageSteps extends SeleniumUtility {
     }
 
 
-    @And("validate four row of data is present")
-    public void validateFourRowIsPresent() {
-        printRows(PlanPage.Plan_Table);
+    @And("validate {int} row of data is present")
+    public void validateFourRowIsPresent(int expectedRow) {
+        int actualRow = printRows(PlanPage.Plan_Table);
+        Assert.assertEquals(expectedRow,actualRow);
+
+
     }
 
 
@@ -64,11 +69,12 @@ public class PlanAndAccountPageSteps extends SeleniumUtility {
     }
 
 
-    @Given("verify that five row page is default")
-    public void verifyPageRow() throws InterruptedException {
+    @Given("verify that {int} row page is default")
+    public void verifyPageRow(int expectedRow) throws InterruptedException {
         Thread.sleep(1000);
         clickElement(AccountPage.Account_Btn);
-        printRows(AccountPage.Show_Page_Row);
+        int actualRow = printRows(AccountPage.Show_Page_Row);
+        Assert.assertEquals(expectedRow,actualRow);
     }
 
     @When("rows are {string} number of records should be same as show")

@@ -48,9 +48,10 @@ public class SeleniumUtility extends BaseSetUp {
 
     }
 
-    public void printRows(By locator){
+    public int printRows(By locator){
         List<WebElement> availableRows = getDriver().findElements(locator);
-        System.out.println("Number of Rows Available are: " + availableRows.size());
+        System.out.println(" Number of Rows Available are: " + availableRows.size());
 
+        return availableRows.size();
     }
 }

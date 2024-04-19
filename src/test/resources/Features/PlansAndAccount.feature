@@ -10,14 +10,14 @@ Feature: plans page functionalities
 
   @PlanPageFunctionality
   Scenario: validating plan page
-    Given validate four row of data is present
+    Given validate 4 row of data is present
     Then validate create date is today date in Est time zone
     And Date Expire is a day after today in Est time zone
 
 
   @AccountPageFunctionality
   Scenario: Validating five row is default in Account page
-    Given verify that five row page is default
+    Given verify that 5 row page is default
 
 
 
