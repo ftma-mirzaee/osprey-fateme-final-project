@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
             features = "classpath:Features",
             glue = "osprey_final_project.steps",
             dryRun = false,
-            tags = "@Regression",
+            tags = "",
             plugin = {
                     "pretty",
                     "html:target/html_report/index.html",
