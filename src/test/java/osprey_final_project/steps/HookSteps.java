@@ -20,9 +20,11 @@ public class HookSteps extends BaseSetUp {
     public void closingTest(Scenario scenario) {
 
         if (scenario.isFailed()) {
+            //cast driver to take screenshot
             TakesScreenshot screenshot = (TakesScreenshot) getDriver();
+            //take screenshot and store it as a file
             byte[] capture = screenshot.getScreenshotAs(OutputType.BYTES);
-
+           //to attach additional data to the report
             scenario.attach(capture, "image/png", "screenshot");
         }
 

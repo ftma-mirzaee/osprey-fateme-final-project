@@ -25,6 +25,7 @@ public class BaseSetUp {
         try {
             String fileFilePath = System.getProperty("user.dir")
                     + "/src/test/resources/config/application-config.properties";
+            //java class, create a file object representing a file name ...
             File propertiesFile = new File(fileFilePath);
             FileInputStream propertyFileInputStream = new FileInputStream(propertiesFile);
             properties.load(propertyFileInputStream);
