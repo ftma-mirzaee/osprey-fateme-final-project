@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class UserProfilePage {
     public static final By Profile_Btn = By.xpath("//button[@aria-label='profile']");
-    public static final By Profile_Page_Info =By.xpath("/html[1]/body[1]/div[3]/div[3]/div[1]/div[1]/div[1]/div[1]/div[1]");
+    public static final By Profile_Page_Info =By.xpath("(//div[@class='chakra-stack css-6phkm9'])");
     public static final By Profile_Page = By.xpath("(//header[text()='Profile'])");
     public static final By Status = By.xpath("//span[contains(text(),'Active')]");
     public static final By User_TYPE = By.xpath("(//p[text()='CSR'])");
