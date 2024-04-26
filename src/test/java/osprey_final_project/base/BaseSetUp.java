@@ -72,7 +72,7 @@ public class BaseSetUp {
 
         String url = this.properties.getProperty("insurance.ui.url");
         driver.get(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
     public WebDriver getDriver() {

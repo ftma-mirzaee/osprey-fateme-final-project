@@ -11,7 +11,7 @@ import java.util.List;
 
 public class SeleniumUtility extends BaseSetUp {
     private WebDriverWait getWait() {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         return wait;
     }
 
