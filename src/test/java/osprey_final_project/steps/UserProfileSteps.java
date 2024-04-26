@@ -46,8 +46,8 @@ public class UserProfileSteps extends SeleniumUtility {
 
         String profile = getElementText(UserProfilePage.Profile_Page_Info);
         String profileInfo = profile.replaceAll
-                (profile,"STATUS:\nActive\nUSER TYPE:\nCSR\nFULL NAME:\nSupervisor\nUSERNAME:\nsupervisor\nAUTHORITIES\nadmin");
-        Assert.assertEquals(profile,profileInfo);
+                (profile, "STATUS:Active, USER TYPE:CSR, FULL NAME:Supervisor, USERNAME:supervisor, AUTHORITIES:admin");
+        Assert.assertEquals(profileInfo,information);
         System.out.println("information are correct:\n" + profileInfo);
 
         /* boolean isDisplayed = isElementDisplayed(UserProfilePage.Profile_Page);
