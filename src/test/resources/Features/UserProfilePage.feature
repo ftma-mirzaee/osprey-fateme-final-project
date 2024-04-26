@@ -9,5 +9,5 @@ Feature: profile page functionality
       | Password | tek_supervisor |
     And click on sign in button
     When click on profile button
-    Then validate profile page information is correct
+    Then validate profile page information is correct "STATUS:Active, USER TYPE:CSR, FULL NAME:Supervisor, USERNAME:supervisor, AUTHORITIES:admin"
     And validate log out button that navigates you to home page

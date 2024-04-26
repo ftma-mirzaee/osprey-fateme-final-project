@@ -41,10 +41,16 @@ public class UserProfileSteps extends SeleniumUtility {
 
     }
 
-    @Then("validate profile page information is correct")
-    public void ValidateProfilePage() {
+    @Then("validate profile page information is correct {string}")
+    public void ValidateProfilePage(String information) {
 
-        boolean isDisplayed = isElementDisplayed(UserProfilePage.Profile_Page);
+        String profile = getElementText(UserProfilePage.Profile_Page_Info);
+        String profileInfo = profile.replaceAll
+                (profile,"STATUS:\nActive\nUSER TYPE:\nCSR\nFULL NAME:\nSupervisor\nUSERNAME:\nsupervisor\nAUTHORITIES\nadmin");
+        Assert.assertEquals(profile,profileInfo);
+        System.out.println("information are correct:\n" + profileInfo);
+
+        /* boolean isDisplayed = isElementDisplayed(UserProfilePage.Profile_Page);
         assertTrue(isDisplayed);
         boolean isStatusDisplayed = isElementDisplayed(UserProfilePage.Status);
         assertTrue(isStatusDisplayed);
@@ -55,7 +61,7 @@ public class UserProfileSteps extends SeleniumUtility {
         boolean isNameDisplayed = isElementDisplayed(UserProfilePage.FULL_NAME);
         assertTrue(isNameDisplayed);
         boolean isAuthorityDisplayed = isElementDisplayed(UserProfilePage.Authorities);
-        assertTrue(isAuthorityDisplayed);
+        assertTrue(isAuthorityDisplayed);*/
 
     }
 
