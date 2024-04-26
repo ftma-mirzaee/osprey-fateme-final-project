@@ -3,6 +3,7 @@ package osprey_final_project.utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import osprey_final_project.base.BaseSetUp;
 import java.time.Duration;
@@ -52,5 +53,11 @@ public class SeleniumUtility extends BaseSetUp {
         System.out.println(" Number of Rows Available are: " + availableRows.size());
 
         return availableRows.size();
+    }
+    public void selectFromDropDown(By locator, String visibleText){
+        WebElement dropdownElement = getDriver().findElement(locator);
+        Select dropdown = new Select(dropdownElement);
+        dropdown.selectByVisibleText(visibleText);
+
     }
 }

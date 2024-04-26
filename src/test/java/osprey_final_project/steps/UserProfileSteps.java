@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import osprey_final_project.pages.HomePage;
 import osprey_final_project.pages.LoginPage;
 import osprey_final_project.pages.UserProfilePage;
@@ -45,15 +46,16 @@ public class UserProfileSteps extends SeleniumUtility {
 
         boolean isDisplayed = isElementDisplayed(UserProfilePage.Profile_Page);
         assertTrue(isDisplayed);
-
+        boolean isStatusDisplayed = isElementDisplayed(UserProfilePage.Status);
+        assertTrue(isStatusDisplayed);
         boolean isUserDisplayed = isElementDisplayed(UserProfilePage.User_TYPE);
         assertTrue(isUserDisplayed);
-
         boolean isUserNameDisplayed = isElementDisplayed(UserProfilePage.User_NAME);
         assertTrue(isUserNameDisplayed);
-
         boolean isNameDisplayed = isElementDisplayed(UserProfilePage.FULL_NAME);
         assertTrue(isNameDisplayed);
+        boolean isAuthorityDisplayed = isElementDisplayed(UserProfilePage.Authorities);
+        assertTrue(isAuthorityDisplayed);
 
     }
 
