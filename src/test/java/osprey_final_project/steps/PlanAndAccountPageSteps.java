@@ -79,16 +79,9 @@ public class PlanAndAccountPageSteps extends SeleniumUtility {
 
     @When("rows are {string} number of records should be same as show")
     public void selectPageRow(String selectRow) throws InterruptedException {
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         clickElement(AccountPage.Account_Btn);
         clickElement(AccountPage.Drop_Down);
-
-
-        selectFromDropDown(AccountPage.Select_Tag,selectRow);
-        //printRows(AccountPage.Show_Page_Row);
-
-        selectFromDropDown(AccountPage.Select_Tag,selectRow);
-        //printRows(AccountPage.Show_Page_Row);
 
         selectFromDropDown(AccountPage.Select_Tag,selectRow);
         printRows(AccountPage.Show_Page_Row);
