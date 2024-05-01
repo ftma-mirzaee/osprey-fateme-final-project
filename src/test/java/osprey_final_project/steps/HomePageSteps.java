@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import osprey_final_project.pages.FormPage;
 import osprey_final_project.pages.HomePage;
+import osprey_final_project.utilities.DataGeneratorUtility;
 import osprey_final_project.utilities.SeleniumUtility;
 
 import java.util.Map;
@@ -15,6 +16,8 @@ import java.util.Map;
 import static org.junit.Assert.assertTrue;
 
 public class HomePageSteps extends SeleniumUtility {
+    String generatedEmail;
+
     @When("navigate to the home page and validate that the title {string}")
     public void validateTitle(String expectedTitle) {
         String actualTitle = getDriver().getTitle();
@@ -53,7 +56,9 @@ public class HomePageSteps extends SeleniumUtility {
         String maritalStatus = data.get("Marital Status");
         String dateOfBirth = data.get("Date Of Birth");
 
-        sendTextToElement(FormPage.Email_Input, emailAddress);
+
+        generatedEmail = DataGeneratorUtility.randomEmail(emailAddress);
+        sendTextToElement(FormPage.Email_Input,generatedEmail);
         sendTextToElement(FormPage.First_name_input, firstName);
         sendTextToElement(FormPage.Gender, gender);
         sendTextToElement(FormPage.Title_prefix, titlePrefix);
@@ -65,12 +70,11 @@ public class HomePageSteps extends SeleniumUtility {
     @And("click on create account button")
     public void clickOnAccountButton() {
         clickElement(FormPage.Create_Account_Btn);
-
     }
-
 
     @Then("validate user navigate to signup page and email address shows as expected")
     public void validateEmailAddress() {
+        boolean displayed = isElementDisplayed(FormPage.Sign_Up_Page);
         boolean isDisplayed = isElementDisplayed(FormPage.Email_Add);
         assertTrue(isDisplayed);
     }
@@ -102,10 +106,15 @@ public class HomePageSteps extends SeleniumUtility {
 
 
 
-    @Then("Click create account validate error message as expected")
-    public void validateErrorMessage(){
+    @Then("Click create account validate error message as expected {string}")
+    public void validateErrorMessage(String errorMessage){
         clickElement(FormPage.Create_Account_Btn);
-        boolean isDisplayed = isElementDisplayed(FormPage.Error_Message);
-        assertTrue(isDisplayed);
+        String actualError = getElementText(FormPage.Error_Message);
+        assertTrue(errorMessage,actualError.contains(errorMessage));
+
+
+
+       /* boolean isDisplayed = isElementDisplayed(FormPage.Error_Message);
+        assertTrue(isDisplayed);*/
     }
 }

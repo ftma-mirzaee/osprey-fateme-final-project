@@ -13,8 +13,10 @@ public class FormPage {
     public static final By Marital_Status = By.id("maritalStatus");
 
     public static final By Date_of_Birth = By.id("dateOfBirth");
+
     public static final By Create_Account_Btn = By.xpath("//button[text()='Create Account']");
 
+    public static final By Sign_Up_Page = By.xpath("//h2[text()='Sign up your account']");
     public static final By Email_Add = By.cssSelector("h2:nth-child(2)");
     public static final By Error_Message =  By.cssSelector("div[role='alert']");
 }

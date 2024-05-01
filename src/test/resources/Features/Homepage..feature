@@ -32,4 +32,4 @@ Feature: Major functionalities of tek insurance app home page
       | Last Name      | Ruiz                  |
       | Marital Status | single                |
       | Date Of Birth  | 04/02/1998             |
-    Then Click create account validate error message as expected
+    Then Click create account validate error message as expected "Account with email students@tekschool.us is exist"

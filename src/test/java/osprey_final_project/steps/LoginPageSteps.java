@@ -16,7 +16,6 @@ public class LoginPageSteps extends SeleniumUtility {
     @Given("click on login button")
     public void clickOnLoginButton() {
         clickElement(LoginPage.Login_btn);
-
     }
 
 
@@ -48,7 +47,6 @@ public class LoginPageSteps extends SeleniumUtility {
 
         sendTextToElement(LoginPage.User_name, userName);
         sendTextToElement(LoginPage.Password, password);
-
 
     }
 

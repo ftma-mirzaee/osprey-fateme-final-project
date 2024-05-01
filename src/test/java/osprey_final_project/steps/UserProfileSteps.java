@@ -51,18 +51,7 @@ public class UserProfileSteps extends SeleniumUtility {
         System.out.println("information are correct:\n" + profileInfo);
 
         /* boolean isDisplayed = isElementDisplayed(UserProfilePage.Profile_Page);
-        assertTrue(isDisplayed);
-        boolean isStatusDisplayed = isElementDisplayed(UserProfilePage.Status);
-        assertTrue(isStatusDisplayed);
-        boolean isUserDisplayed = isElementDisplayed(UserProfilePage.User_TYPE);
-        assertTrue(isUserDisplayed);
-        boolean isUserNameDisplayed = isElementDisplayed(UserProfilePage.User_NAME);
-        assertTrue(isUserNameDisplayed);
-        boolean isNameDisplayed = isElementDisplayed(UserProfilePage.FULL_NAME);
-        assertTrue(isNameDisplayed);
-        boolean isAuthorityDisplayed = isElementDisplayed(UserProfilePage.Authorities);
-        assertTrue(isAuthorityDisplayed);*/
-
+        assertTrue(isDisplayed);*/
     }
 
     @And("validate log out button that navigates you to home page")
